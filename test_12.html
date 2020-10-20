@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            border: 3px red solid;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <img :src="src" :title="title" :class="{aa: showCss}">
+    <br>
+    <input type="button" value="改变样式" @click="addCss">
+    <br>
+    <input type="button" value="切换图片" @click="changeImg">
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            title: '帅气的二哈',
+            showCss: false,
+            src: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3469716026,2816395410&fm=26&gp=0.jpg"
+
+        },
+        methods:{
+            addCss(){
+                this.showCss = !this.showCss;
+            },
+            changeImg(){
+                this.src = "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2481540226,557581684&fm=115&gp=0.jpg"
+            },
+        },
+    })
+</script>
+
+</body>
+</html>

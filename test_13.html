@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            border: 3px red solid;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h3>{{ user.name }}、{{ user.age }}、{{ user.pwd }}</h3>
+    <span v-for="(value, key, index) in user">
+        {{ index }}  {{ key }}: {{ value }}<br>
+    </span>
+    <ul>
+        <li v-for="(city, index) in arr">
+            <span>{{ index + 1 }}: {{ city }}</span>
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(value, index) in users" :key="index">
+            <span>{{ index + 1 }}: {{ value.name }}、{{ value.age }}</span>
+        </li>
+    </ul>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            user: {name: '小黑', age: 21, pwd: '123456'},
+            arr: ['北京', '山西', '天津'],
+            users: [
+                {name: '小黑', age: 21, pwd: '123456'},
+                {name: '小红', age: 20, pwd: '123456'},
+                {name: '小蓝', age: 19, pwd: '123456'},
+            ],
+        },
+    })
+</script>
+
+</body>
+</html>

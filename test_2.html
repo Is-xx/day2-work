@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h3>{{ msg }}</h3>
+    <h3>{{ num }}</h3>
+    <h3>{{ user.username }}</h3>
+    <h3>{{ arr[1] }}</h3>
+    <h3>{{ users[0].username }}</h3>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg: '这是一个字符串',
+            num: 21,
+            user: {'username': '小黑', password: '123456'},
+            arr: ['太原', '北京', '天津'],
+            users: [
+                {'username': '张三', password: '123456'},
+                {'username': '李四', password: '123456'},
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>

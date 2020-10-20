@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h3>数字: {{ num }}</h3>
+    <input type="button" value="点击增加" @click="add_num">
+    <input type="button" value="点击减少" @click="sub_num">
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num: 20,
+        },
+        methods:{
+            add_num: function(){
+                this.num ++;
+            },
+            sub_num: function(){
+                this.num --;
+            },
+        },
+    })
+</script>
+
+</body>
+</html>

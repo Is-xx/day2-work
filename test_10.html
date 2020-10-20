@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <h3 v-show="true">{{ message }}</h3>
+    <hr>
+    <h3 v-show="isShow">{{ message }}</h3>
+    <hr>
+    <input type="button" value="点击控制是否展示" @click="show_control">
+    <hr>
+    <span v-show="num>=20">数字控制显示</span>当前数字：{{ num }}
+    <br>
+    <input type="button" value="点击增加" @click="add_num">
+    <input type="button" value="点击减少" @click="sub_num">
+
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num: 20,
+            isShow: true,
+            message: '好好学习天天向上',
+        },
+        methods:{
+            add_num(){
+                this.num ++;
+            },
+            sub_num(){
+                this.num --;
+            },
+            show_control(){
+                this.isShow = !this.isShow;
+            },
+        },
+    })
+</script>
+
+</body>
+</html>
